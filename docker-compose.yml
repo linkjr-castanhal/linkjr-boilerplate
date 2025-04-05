@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:17.1-alpine
-    container_name: postgres
+    container_name: postgres-db
     ports:
       - '${DB_PORT}:5432'
     environment:
@@ -15,7 +15,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4:latest
-    container_name: pgadmin
+    container_name: pg-admin
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
@@ -29,7 +29,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: redis
+    container_name: redis-db
     ports:
       - '${REDIS_PORT}:6379'
     networks:
