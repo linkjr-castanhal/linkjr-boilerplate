@@ -1,7 +1,9 @@
+import '@/assets/globals.css'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { cn } from '@/lib/utils'
+import { Providers } from '@/providers'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import '@/assets/globals.css'
-import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'LinkJr Boilerplate',
@@ -20,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={cn('min-h-screen antialiased', inter.className)}>
-        {children}
+        <Providers>
+          {children}
+          <ThemeToggle />
+        </Providers>
       </body>
     </html>
   )
