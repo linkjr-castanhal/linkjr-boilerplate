@@ -1,3 +1,10 @@
+import { Navbar } from '@/app/(landing-page)/_components/navbar'
+
 export default function Home() {
-  return <div>Hello, World</div>
+  return (
+    <>
+      <Navbar />
+      Hello, World
+    </>
+  )
 }
